@@ -1,12 +1,13 @@
 ﻿using System.Collections.ObjectModel;
+using Microsoft.EntityFrameworkCore;
 
 namespace DataBaseApp.Model.DataBase
 {
-    public class DB
+    public class DB: DbContext
     {
-        private readonly ObservableCollection<int> _myValues = new ObservableCollection<int>();
-
-        public readonly ReadOnlyObservableCollection<int> MyPublicValues;
+        public DbSet<User> Users { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+            => options.UseSqlite("Data Source=Users.db");
 
     }
 }
