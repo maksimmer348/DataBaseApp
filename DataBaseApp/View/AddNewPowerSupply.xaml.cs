@@ -10,20 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
-using DataBaseApp.ViewModel;
 
 namespace DataBaseApp.View
 {
-    
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Interaction logic for AddNewPowerSupply.xaml
+    /// </summary>
+    public partial class AddNewPowerSupply : Window
     {
-       
-        public MainWindow()
+        public AddNewPowerSupply()
         {
-         InitializeComponent();
-         DataContext = new MainVM();
+            InitializeComponent();
         }
     }
 }

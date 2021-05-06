@@ -1,54 +1,67 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Collections.ObjectModel;
-using System.Text;
-using System.Windows.Input;
-using DataBaseApp.Model.Excel;
-using Prism.Commands;
-using Prism.Mvvm;
-//using DataBaseApp.Model;
-
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using DataBaseApp.Annotations;
+using DataBaseApp.Model;
 
 namespace DataBaseApp.ViewModel
 {
-    public class MainVM : BindableBase
+    public class MainVM : INotifyPropertyChanged
     {
-        public ExcelReader ExcelRead = new ExcelReader();
+        //все типы девайсов 
+        private List<PowerSupply> allPowerSupply = DataWorker.GetAllPowerSupply();
+
+        //все сроки выполнения  
+        private List<ElectronicComponent> allElectronicComponent = DataWorker.GetAllElectronicComponent();
+
+        //все блоки питания 
+        private List<PCB> allPCB = DataWorker.GetAllPCB();
+
+        //все типы девайсов 
+        public List<PowerSupply> AllPowerSupply
+        {
+            get => allPowerSupply;
+            set
+            {
+                allPowerSupply = value;
+                OnPropertyChanged(nameof(AllPowerSupply));
+            }
+        }
+
+        //все сроки выполнения
+        public List<ElectronicComponent> AllElectronicComponent
+        {
+            get => allElectronicComponent;
+            set
+            {
+                allElectronicComponent = value;
+                OnPropertyChanged(nameof(AllElectronicComponent));
+            }
+        }
+
+        //все блоки питания 
+        public List<PCB> AllPCB
+        {
+            get => allPCB;
+            set
+            {
+                allPCB = value;
+                OnPropertyChanged(nameof(AllPCB));
+            }
+        }
 
         public MainVM()
         {
-            //таким нехитрым способом мы пробрасываем изменившиеся свойства модели во View
+            
+        }
 
+        public event PropertyChangedEventHandler? PropertyChanged;
 
-            //    model.PropertyChanged += (s, e) => { RaisePropertyChanged(e.PropertyName); };
-            //   AddCommand = new DelegateCommand<string>(str => {
-            //        //проверка на валидность ввода - обязанность VM
-            //        int ival;
-            //        if (int.TryParse(str, out ival)) model.AddValue(ival);
-            //    });
-            //    RemoveCommand = new DelegateCommand<int?>(i => {
-            //        if (i.HasValue) model.RemoveValue(i.Value);
-            //    });
-            //    //
-            //    HaveSignal = new DelegateCommand<bool?>(b =>
-            //    {
-            //        {
-            //            model.signal = !model.signal;
-            //            RaisePropertyChanged(nameof(s));//ищет толко в этом классе
-            //        }
-            //    });
-            //}
-            //public DelegateCommand<string> AddCommand { get; }
-
-            //public DelegateCommand<int?> RemoveCommand { get; }
-
-            //public DelegateCommand<bool?> HaveSignal { get; }
-            //public int Sum => model.Sum;
-            //public bool s => model.signal;
-            //public ReadOnlyObservableCollection<int> MyValues => model.MyPublicValues;
-
-
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
