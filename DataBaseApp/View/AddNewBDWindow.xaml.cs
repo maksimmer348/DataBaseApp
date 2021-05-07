@@ -17,7 +17,7 @@ namespace DataBaseApp.View
     /// <summary>
     /// Interaction logic for PowerSupplyWindow.xaml
     /// </summary>
-    public partial class AddNewBDWindow : Window
+    public partial class AddNewBDWindow
     {
         public AddNewBDWindow()
         {
