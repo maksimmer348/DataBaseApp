@@ -13,4 +13,17 @@
     <PackageReference Include="Prism.Wpf" Version="8.0.0.1909" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="View\EditNewBDWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="View\EditNewBDWindow.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+
 </Project>

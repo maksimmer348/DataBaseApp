@@ -29,7 +29,6 @@
                 <GridView>
                     <GridViewColumn Header="Name"/>
                     <GridViewColumn Header="Type"/>
-                    <GridViewColumn Header="CountCannels"/>
                     <GridViewColumn Header="Dimensions"/>
                     <GridViewColumn Header="Power"/>
                     <GridViewColumn Header="Voltage"/>
@@ -47,6 +46,8 @@
                         <GridView>
                             <GridViewColumn Header="Name"/>
                             <GridViewColumn Header="Type"/>
+                            <GridViewColumn Header="Name Power Supply"/>
+                            <GridViewColumn Header="Type Power Supply"/>
                             <GridViewColumn Header="PositionNumber"/>
                             <GridViewColumn Header="DatasheetLink"/>
                         </GridView>
@@ -63,6 +64,8 @@
                         <GridView>
                             <GridViewColumn Header="Name"/>
                             <GridViewColumn Header="Type"/>
+                            <GridViewColumn Header="Name Power Supply"/>
+                            <GridViewColumn Header="Type Power Supply"/>
                             <GridViewColumn Header="DatasheetLink"/>
                         </GridView>
                     </ListView.View>

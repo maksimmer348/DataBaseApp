@@ -5,13 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBaseApp.View"
         mc:Ignorable="d"
-        Title="Add New BD" Height="550" Width="300">
+        Title="Add New BD" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-
         <TabControl Grid.Row="0">
             <TabItem Name="PowerSupplyTab">
                 <TabItem.Header>
@@ -26,6 +25,8 @@
                         <TextBox Text=" "/>
                         <TextBlock Text="Type"/>
                         <TextBox Text=" "/>
+                        <TextBlock Text="Count Cannels"/>
+                        <TextBox Text=" "/>
                         <TextBlock Text="Dimensions"/>
                         <TextBox Text=" "/>
                         <TextBlock Text="Power"/>
@@ -35,6 +36,7 @@
                         <TextBlock Text="Datasheet Link"/>
                         <TextBox Text=" "/>
                     </StackPanel>
+                   
                 </Grid>
             </TabItem>
 
@@ -50,10 +52,6 @@
                         <TextBox Text=" "/>
                         <TextBlock Text="Type"/>
                         <TextBox Text=" "/>
-                        <TextBlock Text="Name Power Supply"/>
-                        <ComboBox/>
-                        <TextBlock Text="Type Power Supply"/>
-                        <ComboBox/>
                         <TextBlock Text="PositionNumber"/>
                         <TextBox Text=" "/>
                         <TextBlock Text="DatasheetLink"/>
@@ -67,30 +65,19 @@
                     <TextBlock Text="PCB List"></TextBlock>
                 </TabItem.Header>
                 <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="107*"/>
-                        <ColumnDefinition Width="187*"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Vertical"
-                                HorizontalAlignment="Left" 
-                                VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="94,0,0,0">
+                    <StackPanel Grid.Row="0" Orientation="Vertical"
+                                HorizontalAlignment="Center" 
+                                VerticalAlignment="Center">
                         <TextBlock Text="Name"/>
                         <TextBox Text=" "/>
                         <TextBlock Text="Type"/>
                         <TextBox Text=" "/>
-                        <TextBlock Text="Name Power Supply"/>
-                        <ComboBox/>
-                        <TextBlock Text="Type Power Supply"/>
-                        <ComboBox/>
                         <TextBlock Text="DatasheetLink"/>
                         <TextBox Text=" "/>
                     </StackPanel>
                 </Grid>
             </TabItem>
-
         </TabControl>
-
         <Button Grid.Row="1" Content="Add From Data Base"></Button>
-
     </Grid>
 </Window>
