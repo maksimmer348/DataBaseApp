@@ -11,15 +11,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using DataBaseApp.ViewModel;
 namespace DataBaseApp.View
 {
     /// <summary>
-    /// Interaction logic for AddNewPowerSupply.xaml
+    /// Interaction logic for PowerSupplyWindow.xaml
     /// </summary>
-    public partial class AddNewPowerSupply : Window
+    public partial class AddNewBDWindow : Window
     {
-        public AddNewPowerSupply()
+        public AddNewBDWindow()
         {
             InitializeComponent();
         }

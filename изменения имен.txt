@@ -1,0 +1,26 @@
+Department ==  PowerSupply
+Position ==  ElectronicComponents
+User ==  PCB
+
+
+UsersTab == PowerSupplyTab
+Staff == SupplyList
+
+Name == Name
+Surname == Type
+Phopne == CountCannels
+Salary == Dimensions //размер
+Positioion == Power
+Department == Voltage
+
+
+
+PositionTab == ElectronicComponentsTab
+Psitions == ElectronicComponentsList
+
+
+DepartmensTab == PCBTab
+Departmens == PCBList
+
+
+DataMangeVM == MainVM

@@ -22,7 +22,7 @@
         <TabControl Grid.Row="0">
     <TabItem Name="PowerSupplyTab">
         <TabItem.Header>
-                    <TextBlock Text="PowerSupplyList"></TextBlock>
+                    <TextBlock Text="Power Supply List"></TextBlock>
         </TabItem.Header>
         <ListView>
             <ListView.View>
@@ -40,7 +40,7 @@
     </TabItem>
             <TabItem Name="ElectronicComponentsTab">
                 <TabItem.Header>
-                    <TextBlock Text="ElectronicComponentsList"></TextBlock>
+                    <TextBlock Text="Electronic Components List"></TextBlock>
                 </TabItem.Header>
                 <ListView>
                     <ListView.View>
@@ -56,7 +56,7 @@
 
             <TabItem Name="PCBTab">
                 <TabItem.Header>
-                    <TextBlock Text="PCBList"></TextBlock>
+                    <TextBlock Text="PCB List"></TextBlock>
                 </TabItem.Header>
                 <ListView>
                     <ListView.View>
