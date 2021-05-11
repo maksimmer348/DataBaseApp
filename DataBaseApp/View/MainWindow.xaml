@@ -1,42 +1,35 @@
-﻿<Window x:Class="DataBaseApp.View.Window"
+﻿<Window x:Class="DataBaseApp.View.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DataBaseApp"
-        xmlns:view="clr-namespace:DataBaseApp.View"
-        xmlns:view1="clr-namespace:DataBaseApp.View"
+        xmlns:local="clr-namespace:DataBaseApp.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="850">
-
-    <Window.Resources>
-       
-    </Window.Resources>
-
     <Grid>
-<Grid.RowDefinitions>
-    <RowDefinition Height="*"/>
-    <RowDefinition Height="50"/>
-</Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
         <TabControl Grid.Row="0">
-    <TabItem Name="PowerSupplyTab">
-        <TabItem.Header>
+            <TabItem Name="PowerSupplyTab">
+                <TabItem.Header>
                     <TextBlock Text="Power Supply List"></TextBlock>
-        </TabItem.Header>
-        <ListView>
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="Name"/>
-                    <GridViewColumn Header="Type"/>
-                    <GridViewColumn Header="Dimensions"/>
-                    <GridViewColumn Header="Power"/>
-                    <GridViewColumn Header="Voltage"/>
-                    <GridViewColumn Header="DatasheetLink"/>
+                </TabItem.Header>
+                <ListView>
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name"/>
+                            <GridViewColumn Header="Type"/>
+                            <GridViewColumn Header="Dimensions"/>
+                            <GridViewColumn Header="Power"/>
+                            <GridViewColumn Header="Voltage"/>
+                            <GridViewColumn Header="DatasheetLink"/>
                         </GridView>
-            </ListView.View>
-        </ListView>
-    </TabItem>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
             <TabItem Name="ElectronicComponentsTab">
                 <TabItem.Header>
                     <TextBlock Text="Electronic Components List"></TextBlock>
@@ -74,5 +67,4 @@
         </TabControl>
 
     </Grid>
-
 </Window>

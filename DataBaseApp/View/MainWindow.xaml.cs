@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using DataBaseApp.ViewModel;
+using MaterialDesignThemes.Wpf;
+using System.Windows;
 
 namespace DataBaseApp.View
 {
@@ -23,7 +25,10 @@ namespace DataBaseApp.View
         public MainWindow()
         {
          InitializeComponent();
-         DataContext = new MainVM();
+         //DataContext = new MainVM();
+         AddNewBDWindow bdWindow = new AddNewBDWindow();
+         MessageView MV = new MessageView();
+       
         }
     }
 }

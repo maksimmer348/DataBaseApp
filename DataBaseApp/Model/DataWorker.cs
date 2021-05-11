@@ -7,19 +7,19 @@ namespace DataBaseApp.Model
         //создат отдел == PowerSupply
         public static List<PowerSupply> GetAllPowerSupply()
         {
-            throw new System.NotImplementedException();
+            return null;
         }
 
         //создать позицию == Deadlines //ElectronicComponents
         public static List<ElectronicComponent> GetAllElectronicComponent()
         {
-            throw new System.NotImplementedException();
+            return null;
         }
 
         //созщдать сутрудника == PCB
         public static List<PCB> GetAllPCB()
         {
-            throw new System.NotImplementedException();
+            return null;
         }
 
         //удаление отдела == удаление TypeDevice
