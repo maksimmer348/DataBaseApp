@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DataBaseApp.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="850">
+        Title="MainWindow" Height="450" Width="950">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
@@ -18,14 +18,34 @@
                     <TextBlock Text="Power Supply List"></TextBlock>
                 </TabItem.Header>
                 <ListView>
+                    <ListView.Resources>
+                        <Style TargetType="ListViewItem">
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.Resources>
                     <ListView.View>
                         <GridView>
                             <GridViewColumn Header="Name"/>
-                            <GridViewColumn Header="Type"/>
-                            <GridViewColumn Header="Dimensions"/>
                             <GridViewColumn Header="Power"/>
                             <GridViewColumn Header="Voltage"/>
-                            <GridViewColumn Header="DatasheetLink"/>
+
+                            <GridViewColumn Header="ElectronicComponents">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox Name="name" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="PCB">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox Name="name" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
+                            <GridViewColumn Header="Schema"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -40,7 +60,6 @@
                             <GridViewColumn Header="Name"/>
                             <GridViewColumn Header="Type"/>
                             <GridViewColumn Header="Name Power Supply"/>
-                            <GridViewColumn Header="Type Power Supply"/>
                             <GridViewColumn Header="PositionNumber"/>
                             <GridViewColumn Header="DatasheetLink"/>
                         </GridView>
@@ -58,7 +77,15 @@
                             <GridViewColumn Header="Name"/>
                             <GridViewColumn Header="Type"/>
                             <GridViewColumn Header="Name Power Supply"/>
-                            <GridViewColumn Header="Type Power Supply"/>
+
+                            <GridViewColumn Header="ElectronicComponents">
+                                <GridViewColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ComboBox Name="Name" />
+                                    </DataTemplate>
+                                </GridViewColumn.CellTemplate>
+                            </GridViewColumn>
+
                             <GridViewColumn Header="DatasheetLink"/>
                         </GridView>
                     </ListView.View>

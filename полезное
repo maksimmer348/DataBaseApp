@@ -1,0 +1,13 @@
+ <!--<Border MinWidth="400" MaxWidth="700" Background="White" Margin="15"  VerticalAlignment="Center" Padding="30"  CornerRadius="20">
+           <Border.Effect>
+               <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="1"/>
+                </Border.Effect>
+           <StackPanel>
+                <TextBlock Text="Введите данные" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                <Grid Margin=" 0 0 0 20">
+                    <Button x:Name="WriteToBD" ToolTip ="Записать в " HorizontalAlignment ="Left" Content="Запись" Style="{StaticResource MaterialDesignFlatButton}"/>
+                    <Button x:Name="ReadFromBD" HorizontalAlignment ="Center" Content="Чтение из базы данных" />
+                    <Button x:Name="DeleteElement" HorizontalAlignment ="Right" Content="Удаление элемента из базы данных" />
+                </Grid>
+            </StackPanel>
+        </Border>-->

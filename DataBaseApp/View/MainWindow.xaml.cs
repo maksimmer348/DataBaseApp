@@ -12,23 +12,33 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using DataBaseApp.Model;
+using DataBaseApp.Model.Data;
 using DataBaseApp.ViewModel;
 using MaterialDesignThemes.Wpf;
-using System.Windows;
 
 namespace DataBaseApp.View
 {
-    
+
     public partial class MainWindow : Window
     {
-       
+        private ApplicationContext db;
+
         public MainWindow()
         {
-         InitializeComponent();
-         //DataContext = new MainVM();
-         AddNewBDWindow bdWindow = new AddNewBDWindow();
-         MessageView MV = new MessageView();
-       
+            InitializeComponent();
+
+        }
+
+        void StartApp()
+        {
+         int Id = 12;
+         string Name = "dkjfk";
+         int Power = 10;
+         int Voltage = 40;
+
+        db.Add( new PowerSupply());//создадим базу данных с новым жкеземпляром класса и добавим туда значнея из тектовых полей
+        db.SaveChanges();
         }
     }
 }

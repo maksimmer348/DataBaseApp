@@ -11,7 +11,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-       
+
         <TabControl Grid.Row="0">
 
             <TabItem Name="PowerSupplyTab">
@@ -82,6 +82,8 @@
                         <TextBlock Text="Name Power Supply"/>
                         <ComboBox/>
                         <TextBlock Text="Type Power Supply"/>
+                        <ComboBox/>
+                        <TextBlock Text="ElectronicComponents"/>
                         <ComboBox/>
                         <TextBlock Text="DatasheetLink"/>
                         <TextBox Text=" "/>

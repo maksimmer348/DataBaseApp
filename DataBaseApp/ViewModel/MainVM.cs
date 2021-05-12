@@ -53,7 +53,7 @@ namespace DataBaseApp.ViewModel
 
         public MainVM()
         {
-            
+
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
