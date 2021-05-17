@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBaseApp.View"
+        xmlns:system="clr-namespace:System;assembly=System.Runtime"
         mc:Ignorable="d"
         Title="Add New BD" Height="550" Width="300">
     <Grid>
@@ -23,18 +24,69 @@
                                 Orientation="Vertical"
                                 HorizontalAlignment="Center" 
                                 VerticalAlignment="Center">
+
                         <TextBlock Text="Name"/>
-                        <TextBox Text=" "/>
-                        <TextBlock Text="Type"/>
-                        <TextBox Text=" "/>
-                        <TextBlock Text="Dimensions"/>
-                        <TextBox Text=" "/>
+                        <TextBox Text="{Binding AddNewPowerSupply}">
+                            <TextBox.Style>
+                                <Style TargetType="TextBox">
+                                    <Setter Property="Background" Value="Green"/>
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding s}">
+                                            <!--изменяем состояние через триггер HaveSignal-->
+                                            <DataTrigger.Value>
+                                                <system:Boolean>False</system:Boolean>
+                                            </DataTrigger.Value>
+                                            <DataTrigger.Setters>
+                                                <Setter Property="Background" Value="Red"/>
+                                            </DataTrigger.Setters>
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </TextBox.Style>
+                        </TextBox>
                         <TextBlock Text="Power"/>
                         <TextBox Text=" "/>
                         <TextBlock Text="Voltage"/>
                         <TextBox Text=" "/>
-                        <TextBlock Text="Datasheet Link"/>
+
+                        <TextBlock Text="Electronic Components"/>
+                        <ComboBox/>
+
+                        <TextBlock Text="PCB"/>
+                        <ComboBox/>
+
+                        <TextBlock Text="Path To Schema"/>
                         <TextBox Text=" "/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="PCBTab">
+                <TabItem.Header>
+                    <TextBlock Text="PCB List"></TextBlock>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Orientation="Vertical"
+                                HorizontalAlignment="Left" 
+                                VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="94,0,0,0">
+
+                        <TextBlock Text="Name"/>
+                        <TextBox Text=" "/>
+                        <TextBlock Text="Type"/>
+                        <TextBox Text=" "/>
+                        <TextBlock Text="Name Power Supply"/>
+                        <TextBox Text=" "/>
+
+                        <TextBlock Text="Electronic Components"/>
+                        <ComboBox/>
+
+                        <TextBlock Text="Path To Schema"/>
+                        <TextBox Text=" "/>
+
                     </StackPanel>
                 </Grid>
             </TabItem>
@@ -47,46 +99,18 @@
                     <StackPanel Grid.Row="0" Orientation="Vertical"
                                 HorizontalAlignment="Center" 
                                 VerticalAlignment="Center">
-                        <TextBlock Text="Name"/>
-                        <TextBox Text=" "/>
-                        <TextBlock Text="Type"/>
-                        <TextBox Text=" "/>
-                        <TextBlock Text="Name Power Supply"/>
-                        <ComboBox/>
-                        <TextBlock Text="Type Power Supply"/>
-                        <ComboBox/>
-                        <TextBlock Text="PositionNumber"/>
-                        <TextBox Text=" "/>
-                        <TextBlock Text="DatasheetLink"/>
-                        <TextBox Text=" "/>
-                    </StackPanel>
-                </Grid>
-            </TabItem>
 
-            <TabItem Name="PCBTab">
-                <TabItem.Header>
-                    <TextBlock Text="PCB List"></TextBlock>
-                </TabItem.Header>
-                <Grid>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="107*"/>
-                        <ColumnDefinition Width="187*"/>
-                    </Grid.ColumnDefinitions>
-                    <StackPanel Orientation="Vertical"
-                                HorizontalAlignment="Left" 
-                                VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="94,0,0,0">
                         <TextBlock Text="Name"/>
                         <TextBox Text=" "/>
                         <TextBlock Text="Type"/>
                         <TextBox Text=" "/>
                         <TextBlock Text="Name Power Supply"/>
-                        <ComboBox/>
-                        <TextBlock Text="Type Power Supply"/>
-                        <ComboBox/>
-                        <TextBlock Text="ElectronicComponents"/>
-                        <ComboBox/>
-                        <TextBlock Text="DatasheetLink"/>
                         <TextBox Text=" "/>
+                        <TextBlock Text="Position Number"/>
+                        <TextBox Text=" "/>
+                        <TextBlock Text="Datasheet Link"/>
+                        <TextBox Text=" "/>
+
                     </StackPanel>
                 </Grid>
             </TabItem>

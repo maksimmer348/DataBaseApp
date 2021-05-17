@@ -5,11 +5,15 @@ using Microsoft.Extensions.Configuration;
 
 namespace DataBaseApp.Model.Data
 {
-    public class ApplicationContext : DbContext
+    public class ApplicationContext : DbContext//класс для создания и подключения к базе данных
     {
-        public DbSet<PCB> PCBs { get; set; }
-        public DbSet<ElectronicComponent> ElectronicComponents { get; set; }
-        public DbSet<PowerSupply> PowerSupplies { get; set; }
+        #region ListBd
+
+        public DbSet<PowerSupply> PowerSupplies { get; set; }//база данных для блоков питания
+        public DbSet<PCB> PCBs { get; set; }//бд для плат
+        public DbSet<ElectronicComponent> ElectronicComponents { get; set; }//бд для эк компонентов
+
+        #endregion
 
         public ApplicationContext()
         {

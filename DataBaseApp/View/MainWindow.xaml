@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DataBaseApp.View"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        mc:Ignorable="d"
+        mc:Ignorable="d" 
         Title="MainWindow" Height="450" Width="950">
     <Grid>
         <Grid.RowDefinitions>
@@ -17,7 +17,7 @@
                 <TabItem.Header>
                     <TextBlock Text="Power Supply List"></TextBlock>
                 </TabItem.Header>
-                <ListView>
+                <ListView ItemsSource="{Binding allPowerSupply}">
                     <ListView.Resources>
                         <Style TargetType="ListViewItem">
                             <Setter Property="HorizontalContentAlignment" Value="Stretch" />
@@ -25,6 +25,7 @@
                     </ListView.Resources>
                     <ListView.View>
                         <GridView>
+
                             <GridViewColumn Header="Name"/>
                             <GridViewColumn Header="Power"/>
                             <GridViewColumn Header="Voltage"/>
@@ -45,23 +46,8 @@
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
-                            <GridViewColumn Header="Schema"/>
-                        </GridView>
-                    </ListView.View>
-                </ListView>
-            </TabItem>
-            <TabItem Name="ElectronicComponentsTab">
-                <TabItem.Header>
-                    <TextBlock Text="Electronic Components List"></TextBlock>
-                </TabItem.Header>
-                <ListView>
-                    <ListView.View>
-                        <GridView>
-                            <GridViewColumn Header="Name"/>
-                            <GridViewColumn Header="Type"/>
-                            <GridViewColumn Header="Name Power Supply"/>
-                            <GridViewColumn Header="PositionNumber"/>
-                            <GridViewColumn Header="DatasheetLink"/>
+                            <GridViewColumn Header="Path To Schema"/>
+
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -71,9 +57,10 @@
                 <TabItem.Header>
                     <TextBlock Text="PCB List"></TextBlock>
                 </TabItem.Header>
-                <ListView>
+                <ListView ItemsSource="{Binding allPCB}">
                     <ListView.View>
                         <GridView>
+
                             <GridViewColumn Header="Name"/>
                             <GridViewColumn Header="Type"/>
                             <GridViewColumn Header="Name Power Supply"/>
@@ -86,12 +73,34 @@
                                 </GridViewColumn.CellTemplate>
                             </GridViewColumn>
 
-                            <GridViewColumn Header="DatasheetLink"/>
+                            <GridViewColumn Header="Path To Schema"/>
+
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+            </TabItem>
+
+            <TabItem Name="ElectronicComponentsTab">
+                <TabItem.Header>
+                    <TextBlock Text="Electronic Components List"></TextBlock>
+                </TabItem.Header>
+                <ListView ItemsSource="{Binding allElectronicComponent}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Name"/>
+                            <GridViewColumn Header="Type"/>
+                            <GridViewColumn Header="Name Power Supply"/>
+                            <GridViewColumn Header="Position Number"/>
+                            <GridViewColumn Header="Datasheet Link"/>
                         </GridView>
                     </ListView.View>
                 </ListView>
             </TabItem>
         </TabControl>
-
+        <StackPanel Grid.Row="1" Orientation="Horizontal"
+                    HorizontalAlignment="Right">
+            <Button Content="Добавить/редактировать/Удалить" Command="{Binding OpenAddNewWindow}"></Button>
+            
+        </StackPanel>
     </Grid>
 </Window>

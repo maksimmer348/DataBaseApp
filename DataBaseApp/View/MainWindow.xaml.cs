@@ -26,19 +26,12 @@ namespace DataBaseApp.View
 
         public MainWindow()
         {
+            //AddNewBDWindow b = new AddNewBDWindow();
+            //b.ShowDialog();
             InitializeComponent();
-
+            DataContext = new MainVM();//подключаем биндинги
+            db = new ApplicationContext();
         }
 
-        void StartApp()
-        {
-         int Id = 12;
-         string Name = "dkjfk";
-         int Power = 10;
-         int Voltage = 40;
-
-        db.Add( new PowerSupply());//создадим базу данных с новым жкеземпляром класса и добавим туда значнея из тектовых полей
-        db.SaveChanges();
-        }
     }
 }

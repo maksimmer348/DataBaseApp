@@ -3,10 +3,11 @@ using System.Windows.Input;
 
 namespace DataBaseApp.Model
 {
-    public class RelayCommand//класс для привязки команд
+    public class RelayCommand : ICommand//класс для привязки команд
     {
         private Action<object> _execute;
         private Func<object, bool> _canExecute;
+
         public event EventHandler CanExecuteChanged
         {
             add => CommandManager.RequerySuggested += value;
