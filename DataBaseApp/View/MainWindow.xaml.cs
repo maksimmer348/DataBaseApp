@@ -26,8 +26,8 @@ namespace DataBaseApp.View
 
         public MainWindow()
         {
-            //AddNewBDWindow b = new AddNewBDWindow();
-            //b.ShowDialog();
+            AddNewBDWindow b = new AddNewBDWindow();
+            b.ShowDialog();
             InitializeComponent();
             DataContext = new MainVM();//подключаем биндинги
             db = new ApplicationContext();

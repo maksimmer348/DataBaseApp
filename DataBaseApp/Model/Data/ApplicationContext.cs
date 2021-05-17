@@ -15,6 +15,8 @@ namespace DataBaseApp.Model.Data
 
         #endregion
 
+        #region Create&InitBD
+
         public ApplicationContext()
         {
             Database.EnsureCreated(); //если бд нен существует он ее создаст
@@ -26,5 +28,8 @@ namespace DataBaseApp.Model.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
             => options.UseSqlite(@"SupplyDB");
+
+        #endregion
+
     }
 }

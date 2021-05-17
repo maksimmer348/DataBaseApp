@@ -39,7 +39,7 @@ namespace DataBaseApp.Model
 
         #region CreateEntitys
 
-        //создат отдел == PowerSupply
+       
         public static string CreateAllPowerSupply(string name, int power,
             int voltage, List<ElectronicComponent> electronicComponents,
             List<PCB> pCBs, string pathToSchema)
@@ -73,7 +73,6 @@ namespace DataBaseApp.Model
             }
         }
 
-        //создать позицию ==
         public static string CreateAllPCB(string name, string type,
             PowerSupply namePowerSupply, List<ElectronicComponent> electronicComponents,
             string pathToSchema)
@@ -107,7 +106,6 @@ namespace DataBaseApp.Model
             }
         }
 
-        //созщдать сутрудника == PCB
         public static string CreateAllElectronicComponents(string name, string type, int pcbId, PCB pcb,
             int namePowerSupplyId, PowerSupply namePowerSupply, string positionNumber, string datasheetLink)
 
@@ -115,7 +113,7 @@ namespace DataBaseApp.Model
             var res = "уже существует";
             using (ApplicationContext db = new ApplicationContext())
             {
-                //сущесствует ли 
+                //сущесствует ли электронный компонент
                 var checkIsExist = db.ElectronicComponents.Any(ec => ec.Name == name);
                 if (!checkIsExist)
                 {

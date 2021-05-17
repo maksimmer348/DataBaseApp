@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 using DataBaseApp.Annotations;
 using DataBaseApp.Model;
 using DataBaseApp.View;
@@ -79,22 +81,28 @@ namespace DataBaseApp.ViewModel
         List<ElectronicComponent> electronicComponents = new List<ElectronicComponent>();
         private List<PCB> PCB = new List<PCB>();
 
-        
+
         public RelayCommand AddNewPowerSupply
         {
             get
             {
                 return addNewPowerSupply ?? new RelayCommand(obj =>
                 {
+                    Window wnd = obj as Window;
                     string res = "";
-                   
+
                     if (PowerSupplyName != null || PowerSupplyName.Replace(" ", "").Length == 0
                         && PowerSupplyPower != null && PowerSupplyVoltage != null &&
-                        electronicComponents != null && PCB != null && pathToChxem != null || 
+                        electronicComponents != null && PCB != null && pathToChxem != null ||
                         pathToChxem.Replace(" ", "").Length == 0)
                     {
+
                         res = DataWorker.CreateAllPowerSupply(PowerSupplyName, PowerSupplyPower,
                                 PowerSupplyVoltage, electronicComponents, PCB, pathToChxem);
+                    }
+                    else
+                    {
+                        SetColorBolck(wnd, "NamePS");
                     }
                 });
             }
@@ -131,18 +139,12 @@ namespace DataBaseApp.ViewModel
 
         void SetColorBolck(Window wnd, string BlockName)
         {
-
+            Control blc = (Control)wnd.FindName(BlockName) as Control;
+            blc.BorderBrush = Brushes.Brown;
         }
 
-        public bool s//булево значение кторое пойдет в результат операции на которое срагирует xalm система
-        {
-            get
-            {
-                return signal;
-            }
-        }
         #endregion
-        public bool signal = false;
+
 
         public MainVM()
         {
